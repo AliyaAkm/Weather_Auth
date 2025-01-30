@@ -1,0 +1,17 @@
+<%- include('partials/header') %>
+
+<h2>Вход</h2>
+
+<% if (error) { %>
+    <p style="color: red;"><%= error %></p>
+<% } %>
+
+<form action="/api/auth/login" method="POST">
+    <input type="email" name="email" placeholder="Email" required>
+    <input type="password" name="password" placeholder="Пароль" required>
+    <button type="submit">Войти</button>
+</form>
+
+<p>Нет аккаунта? <a href="/register">Зарегистрируйтесь</a></p>
+
+<%- include('partials/footer') %>
